@@ -2,6 +2,8 @@
 
 return [
 
+    'phone' => 'The :attribute field contains an invalid number.',
+
     /*
     |--------------------------------------------------------------------------
     | Validation Language Lines

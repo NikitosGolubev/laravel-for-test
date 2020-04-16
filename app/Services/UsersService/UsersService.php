@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Storage;
 use Session;
 
 class UsersService {
+    const SESSION_USER_KEY = 'APP_USER';
+
     public function getFromLoginCredentials($data): User {
         return User::where('nickname', $data['nick'])->first();
     }
@@ -29,16 +31,24 @@ class UsersService {
     }
 
     public function isAuthenticated(): bool {
-        return Session::has('APP_USER');
+        return Session::has(self::SESSION_USER_KEY);
+    }
+
+    public function currentAuth() {
+        if ($this->isAuthenticated()) {
+            return Session::get(self::SESSION_USER_KEY);
+        }
+
+        return false;
     }
 
     public function remember(User $user) {
-        Session::put('APP_USER', $user);
+        Session::put(self::SESSION_USER_KEY, $user);
     }
 
     public function forget() {
-        if (Session::has('APP_USER')) {
-            Session::forget('APP_USER');
+        if ($this->isAuthenticated()) {
+            Session::forget(self::SESSION_USER_KEY);
         }
     }
 

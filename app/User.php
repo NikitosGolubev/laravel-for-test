@@ -3,14 +3,21 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
     protected $table = 'users';
     public $timestamps = false;
     protected $attributes = [
-        'avatar' => 'storage/users/default.jpg'
+        'avatar' => 'users/default.jpg'
     ];
+
+    /* Accessors & Mutators  */
+
+    public function getAvatarUrlAttribute() {
+        return Storage::url($this->avatar);
+    }
 
     /* Eloquent relationships */
 

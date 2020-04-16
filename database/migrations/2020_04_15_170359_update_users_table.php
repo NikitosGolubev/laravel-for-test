@@ -12,7 +12,7 @@ class UpdateUsersTable extends Migration
             $table->string('nickname')->unique();
             $table->string('name');
             $table->string('surname');
-            $table->string('avatar')->default('storage/users/default.jpg');
+            $table->string('avatar')->default('users/default.jpg');
             $table->string('phone_number')->unique();
             $table->unsignedTinyInteger('gender')->default(0);
             $table->boolean('mailing_accepted')->default(false);

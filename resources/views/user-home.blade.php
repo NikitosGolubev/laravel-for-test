@@ -11,7 +11,7 @@
             <h2 class="heading">Мой профиль</h2>
             <div class="profile">
                 <div class="avatar">
-                    <img src="{{asset($user->avatar)}}" alt="Аватар" class="avatar__pic">
+                    <img src="{{$user->avatarUrl}}" alt="Аватар" class="avatar__pic">
                 </div>
                 <div class="information">
                     <div class="nickname">{{ $user->nickname }}</div>

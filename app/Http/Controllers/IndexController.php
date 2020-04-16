@@ -2,14 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Session;
+use App\Services\UsersService\UsersService;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
+    protected $usersService;
+
+    public function __construct(UsersService $users_service)
+    {
+        $this->usersService = $users_service;
+    }
+
     public function index() {
-        if (Session::has('APP_USER')) {
-            $user = Session::get('APP_USER');
+        if ($this->usersService->isAuthenticated()) {
+            $user = $this->usersService->currentAuth();
             return view('user-home', ['user' => $user]);
         }
 

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Написать статью')
+
 @section('page-content')
     <div class="nav">
         <a class="nav__item" href="/">Главная</a>

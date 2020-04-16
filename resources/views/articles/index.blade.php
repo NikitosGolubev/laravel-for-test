@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Список моих статей')
+
 @section('page-content')
     <div class="nav">
         <a class="nav__item" href="/">Главная</a>
@@ -9,6 +11,10 @@
     </div>
     <div class="create-article">
         <h2 class="heading">Мои статьи</h2>
+
+        @if($articles->isEmpty())
+            @include('subviews.empty-img')
+        @endif
 
         <div class="articles-list">
             @foreach ($articles as $article)

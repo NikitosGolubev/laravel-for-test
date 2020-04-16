@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\Http\Requests\Articles\CreateArticleRequest;
 use App\Services\ArticlesService\ArticlesService;
 use App\Services\UsersService\UsersService;
+use Illuminate\Support\Facades\Gate;
 
 class ArticlesController extends Controller
 {
@@ -31,5 +33,25 @@ class ArticlesController extends Controller
         $user = $this->usersService->currentAuth();
         $this->articlesService->create($request->getData(), $user);
         return redirect()->route('my-articles');
+    }
+
+    public function show(Article $article) {
+        $this->checkIfUserCanEngageWithArticle($article);
+        return view('articles.show', ['article' => $article]);
+    }
+
+    public function update(Article $article) {
+        $this->checkIfUserCanEngageWithArticle($article);
+    }
+
+    public function destroy(Article $article) {
+        $this->checkIfUserCanEngageWithArticle($article);
+    }
+
+    private function checkIfUserCanEngageWithArticle(Article $article) {
+        $user = $this->usersService->currentAuth();
+        if (Gate::forUser($user)->denies('engage-article', $article)) {
+            abort(403, 'Это не ваша статья');
+        }
     }
 }

@@ -18,4 +18,11 @@ class ArticlesService
         $article->users()->attach($user);
         return $article;
     }
+
+    public function edit($data, Article $article): Article {
+        if ($data['title']) $article->title = $data['title'];
+        if ($data['content']) $article->text = $data['content'];
+        $article->save();
+        return $article;
+    }
 }

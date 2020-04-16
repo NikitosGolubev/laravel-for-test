@@ -3,13 +3,19 @@
 Route::get('/', "IndexController@index")->name('home');
 Route::get('/login', 'IndexController@login')->middleware('guest');
 
-Route::get('/articles', 'ArticlesController@index')->middleware('authenticated')->name('my-articles');
+Route::group(['middleware' => 'authenticated', 'prefix' => 'articles'], function () {
+    Route::get('/', 'ArticlesController@index')->name('my-articles');
 
-Route::get('/articles/create', 'ArticlesController@create')->middleware('authenticated');
-Route::post('/articles/create', 'ArticlesController@store')->middleware('authenticated');
+    Route::get('/create', 'ArticlesController@create');
+    Route::post('/create', 'ArticlesController@store');
 
-Route::get('/articles/{article}', 'ArticlesController@show')->middleware('authenticated');
-Route::get('/articles/{id}/edit', 'ArticlesController@edit')->middleware('authenticated');
+    Route::get('/{article}', 'ArticlesController@show')->name('article.show');
+
+    Route::get('/{article}/edit', 'ArticlesController@edit');
+    Route::put('/{article}/edit', 'ArticlesController@update');
+
+    Route::delete('/{article}/delete', 'ArticlesController@destroy');
+});
 
 // delete, put, post on article entity
 

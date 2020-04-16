@@ -44,7 +44,7 @@ body{
 }
 
 .avatar{
-    min-width: 150px;
+    width: 150px;
     height: 150px;
     overflow: hidden;
     border-radius: 50%;
@@ -52,7 +52,8 @@ body{
 }
 
 .avatar__pic{
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .nickname{
@@ -136,5 +137,27 @@ body{
 
 .error-message {
     font-size: 70%;
-    color: red;
+    color: #f00;
+}
+
+.user-data-profile {
+    display: flex;
+    justify-content: center
+}
+
+.nav {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav__item {
+    padding: 0 10px;
+    color: deeppink;
+    text-decoration: none;
+    transition: 0.3s all;
+}
+
+.nav__item:hover {
+    color: deepskyblue;
+    text-decoration: underline;
 }

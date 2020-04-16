@@ -4,6 +4,6 @@
     </div>
 
     <div class="field__details">
-        {{ $details }}
+        {{ $details ?? '' }}
     </div>
 </div>

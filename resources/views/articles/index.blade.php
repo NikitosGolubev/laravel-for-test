@@ -3,12 +3,8 @@
 @section('title', 'Список моих статей')
 
 @section('page-content')
-    <div class="nav">
-        <a class="nav__item" href="/">Главная</a>
-        <a class="nav__item" href="/articles">Мои статьи</a>
-        <a class="nav__item" href="/articles/create">Написать статью</a>
-        <a class="nav__item" href="/auth/logout">Выйти</a>
-    </div>
+    @include('subviews.nav-auth')
+
     <div class="create-article">
         <h2 class="heading">Мои статьи</h2>
 

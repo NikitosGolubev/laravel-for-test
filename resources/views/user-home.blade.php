@@ -3,12 +3,8 @@
 @section('title', 'Привет, '.$user->nickname)
 
 @section('page-content')
-    <div class="nav">
-        <a class="nav__item" href="/">Главная</a>
-        <a class="nav__item" href="/articles">Мои статьи</a>
-        <a class="nav__item" href="/articles/create">Написать статью</a>
-        <a class="nav__item" href="/auth/logout">Выйти</a>
-    </div>
+    @include('subviews.nav-auth')
+
     <div class="user-data-profile">
         <div class="my-profile">
             <h2 class="heading">Мой профиль</h2>

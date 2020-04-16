@@ -3,12 +3,8 @@
 @section('title', "Редактировать ".$article->title)
 
 @section('page-content')
-    <div class="nav">
-        <a class="nav__item" href="/">Главная</a>
-        <a class="nav__item" href="/articles">Мои статьи</a>
-        <a class="nav__item" href="/articles/create">Написать статью</a>
-        <a class="nav__item" href="/auth/logout">Выйти</a>
-    </div>
+    @include('subviews.nav-auth')
+
     <div>
         <h2 class="heading">Редактировать статью</h2>
         <form class='article-form' id='form' method="POST" action="/articles/{{ $article->id }}/edit">

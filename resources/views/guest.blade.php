@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
 @section('page-content')
-        <div class="nav">
-            <a class="nav__item" href="/">Главная</a>
-            <a class="nav__item" href="/login">Вход</a>
-        </div>
+        @include('subviews.nav-guest')
+
         <div class='edit-profile'>
             <h2 class="heading">Создать профиль пользователя</h2>
 

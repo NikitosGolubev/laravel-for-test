@@ -4,7 +4,7 @@ Route::get('/', "IndexController@index")->name('home');
 Route::get('/login', 'IndexController@login')->middleware('guest');
 
 Route::group(['middleware' => 'authenticated', 'prefix' => 'articles'], function () {
-    Route::get('/', 'ArticlesController@index')->name('my-articles');
+    Route::get('/', 'ArticlesController@index')->name('articles.index');
 
     Route::get('/create', 'ArticlesController@create');
     Route::post('/create', 'ArticlesController@store');

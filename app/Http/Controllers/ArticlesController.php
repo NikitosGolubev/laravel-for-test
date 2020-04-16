@@ -33,7 +33,7 @@ class ArticlesController extends Controller
     public function store(CreateArticleRequest $request) {
         $user = $this->usersService->currentAuth();
         $this->articlesService->create($request->getData(), $user);
-        return redirect()->route('my-articles');
+        return redirect()->route('articles.index');
     }
 
     public function show(Article $article) {
@@ -52,9 +52,10 @@ class ArticlesController extends Controller
         return redirect()->route('article.show', [$article]);
     }
 
-    public function destroy($request, Article $article) {
+    public function destroy(Article $article) {
         $this->checkIfUserCanEngageWithArticle($article);
-
+        $article->delete();
+        return redirect()->route('articles.index');
     }
 
     private function checkIfUserCanEngageWithArticle(Article $article) {

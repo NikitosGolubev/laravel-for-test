@@ -17,6 +17,12 @@ class ArticlesController extends Controller
         $this->usersService = $users_service;
     }
 
+    public function index() {
+        $user = $this->usersService->currentAuth();
+        $articles = $user->articles()->latest('updated_at')->get();
+        return view('articles.index', ['articles' => $articles]);
+    }
+
     public function create() {
         return view('articles.create');
     }

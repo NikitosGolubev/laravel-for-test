@@ -219,3 +219,101 @@ body{
 .centered {
     text-align: center;
 }
+
+.articles-list {
+    min-width: 300px;
+    width: 50vw;
+    max-width: 1000px;
+}
+
+.articles-list__item {
+    margin: 30px 0;
+}
+
+.article-item {
+    border: 1px solid #ccc;
+    padding: 0 15px;
+    transition: 0.5s all;
+}
+
+.article-item:hover {
+    border-color: deeppink;
+}
+
+.article-item__header {
+    font-weight: bold;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: 0.3s all;
+    color: #000;
+}
+
+.article-item__header:hover {
+    color: deeppink;
+}
+
+.article-item__header:active {
+    color: #ccc;
+}
+
+.article-item__header_wrap {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.article-item__controls {
+    padding: 10px 0;
+    font-size: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-controls {
+    display: flex;
+    padding: 0 5px;
+}
+
+.button-controls__item {
+    margin: 0 3px;
+}
+
+.btn {
+    padding: 10px 15px;
+    background: #fff;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    display: table;
+    color: #000;
+    font-size: 14px;
+    transition: 0.3s all;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn_size_sm {
+    font-size: 11px;
+    padding: 5px 8px;
+}
+
+.btn:active, .btn:disabled {
+    opacity: 0.55;
+}
+
+.btn_color_pink {
+    background: deeppink;
+    color: #fff;
+}
+
+.btn_color_pink:hover {
+    background: hotpink;
+}
+
+.btn_color_blue {
+    background: deepskyblue;
+    color: #fff;
+}
+
+.btn_color_blue:hover {
+    background: cornflowerblue;
+}
+

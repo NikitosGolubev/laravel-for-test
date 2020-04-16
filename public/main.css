@@ -21,6 +21,10 @@ body{
 
 .main-content{
     position: absolute;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .heading{
@@ -147,14 +151,20 @@ body{
 
 .nav {
     padding: 10px 0;
+    width: 100%;
     border-bottom: 1px solid #ccc;
 }
 
 .nav__item {
     padding: 0 10px;
+    border-right: 1px solid #ccc;
     color: deeppink;
     text-decoration: none;
     transition: 0.3s all;
+}
+
+.nav__item:last-child {
+    border-right: none
 }
 
 .nav__item:hover {

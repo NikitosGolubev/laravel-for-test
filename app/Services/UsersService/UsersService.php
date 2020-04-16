@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Storage;
 use Session;
 
 class UsersService {
+    public function getFromLoginCredentials($data): User {
+        return User::where('nickname', $data['nick'])->first();
+    }
+
     public function create($data): User {
         $user = new User();
 
@@ -22,6 +26,10 @@ class UsersService {
 
         $user->save();
         return $user;
+    }
+
+    public function isAuthenticated(): bool {
+        return Session::has('APP_USER');
     }
 
     public function remember(User $user) {

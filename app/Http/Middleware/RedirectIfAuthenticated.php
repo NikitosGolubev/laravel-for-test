@@ -3,23 +3,23 @@
 namespace App\Http\Middleware;
 
 use App\Providers\RouteServiceProvider;
+use App\Services\UsersService\UsersService;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
 class RedirectIfAuthenticated
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @param  string|null  $guard
-     * @return mixed
-     */
+    protected $usersService;
+
+    public function __construct(UsersService $users_service)
+    {
+        $this->usersService = $users_service;
+    }
+
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect(RouteServiceProvider::HOME);
+        if ($this->usersService->isAuthenticated()) {
+            return redirect()->route('home');
         }
 
         return $next($request);

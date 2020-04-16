@@ -15,4 +15,8 @@ class IndexController extends Controller
 
         return view('guest');
     }
+
+    public function login() {
+        return view('login');
+    }
 }

@@ -34,12 +34,8 @@ class UsersService {
         return Session::has(self::SESSION_USER_KEY);
     }
 
-    public function currentAuth() {
-        if ($this->isAuthenticated()) {
-            return Session::get(self::SESSION_USER_KEY);
-        }
-
-        return false;
+    public function currentAuth(): User {
+        return Session::get(self::SESSION_USER_KEY);
     }
 
     public function remember(User $user) {

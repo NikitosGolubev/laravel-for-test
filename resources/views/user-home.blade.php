@@ -4,7 +4,10 @@
 
 @section('page-content')
     <div class="nav">
-        <a class="nav__item" href="/auth/logout">Выйти из аккаунта</a>
+        <a class="nav__item" href="/">Главная</a>
+        <a class="nav__item" href="/">Мои статьи</a>
+        <a class="nav__item" href="/articles/create">Написать статью</a>
+        <a class="nav__item" href="/auth/logout">Выйти</a>
     </div>
     <div class="user-data-profile">
         <div class="my-profile">

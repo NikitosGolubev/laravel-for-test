@@ -16,8 +16,7 @@ class IndexController extends Controller
 
     public function index() {
         if ($this->usersService->isAuthenticated()) {
-            $user = $this->usersService->currentAuth();
-            return view('user-home', ['user' => $user]);
+            return view('user-home');
         }
 
         return view('guest');

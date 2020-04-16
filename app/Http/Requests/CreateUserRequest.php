@@ -42,7 +42,7 @@ class CreateUserRequest extends GeneralRequest
                 'max:4096'
             ],
             $this->genderParam => ['bail', 'required', 'integer', new ValidGender],
-            $this->phoneNumberParam => ['bail', 'required', 'min:5', 'max:32', 'phone:RU,UA,BY'],
+            $this->phoneNumberParam => ['bail', 'required', 'min:5', 'max:32', 'phone:RU,UA,BY', 'unique:users,phone_number'],
             $this->acceptMailingParam => ['bail', 'nullable', 'boolean']
         ];
     }

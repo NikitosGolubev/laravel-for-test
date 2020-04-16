@@ -3,6 +3,7 @@
 return [
 
     'phone' => 'The :attribute field contains an invalid number.',
+    'gender' => "The gender-code provided does't exist.",
 
     /*
     |--------------------------------------------------------------------------

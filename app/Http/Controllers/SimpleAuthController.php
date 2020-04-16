@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateUserRequest;
 use App\Services\UsersService\UsersService;
+use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class SimpleAuthController extends Controller
 {
     protected $usersService;
 
@@ -14,9 +14,13 @@ class UsersController extends Controller
         $this->usersService = $users_service;
     }
 
-    public function store(CreateUserRequest $request) {
-        $created_user = $this->usersService->create($request->getData());
-        $this->usersService->remember($created_user);
+
+    public function login() {
+
+    }
+
+    public function logout() {
+        $this->usersService->forget();
         return back();
     }
 }

@@ -14,6 +14,6 @@ class ValidGender implements Rule
 
     public function message()
     {
-        return "The gender-code provided does't exist.";
+        return __("validation.gender");
     }
 }

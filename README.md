@@ -40,5 +40,4 @@ All in all, it's an **express-micro project** which I love. Thank you for your a
 - Добавил абстракцию в request классы.
 
 # Итог
-All in all, it's an **express-micro project** which I love. Thank you for your attention.
-В конце-концов, это микро-экспресс проект, который мне нравится. Благодарю за ваше внимание.
+В конце-концов, это микро-экспресс проект, который мне нравится. Благодарю вас за внимание.

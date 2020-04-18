@@ -9,26 +9,36 @@ So, I had only 1 day to start and complete the project, so my effort was quite i
 This is also a reason, why it's **far from my best projects and code-style.** So, don't judge too harshly.
 
 # What did I have to develop?
-Basically, a record about a user in Eloquent ORM, with data coming from the html form. But, I've taken it further.
+Basically, a record about a user in Eloquent ORM, with data coming from the html form. But, I've taken it a step further.
 - I've added validations
 - I've added the opportunity for the user to manipulate his articles (full CRUD functionality)
 - I've added some nice styling (besides the one which was given)
 - I've added basic auth-system where users could login, knowing their nickname and logout.
-- Added some abstractions on Request classes.
+- Added abstraction on Request classes.
 
 # Summary
 All in all, it's an **express-micro project** which I love. Thank you for your attention.
 
+---
 
-# Тестовое задание
-Этот репозиторий - его реализация.
+# Что это за проект?
+Это реализация тестового задания, которое я получил при подаче заявки на трудоустройтсво.
+Я полностью его выполнил, а так же добавил кое-какую функциональность от себя.
+Тестовое задание: https://github.com/vleukhin/test-laravel-php/blob/master/readme.md
 
-**Дополнения**
+# Как долго он разрабатывался?
+У меня был только 1 день по сути, чтобы начать и закончить проект. Приложенные усилия были колоссальны и сфокусированы на одном промежуте времени. Это становится очевидным при взгляде на историю коммитов, 14 дев коммитов были сделаны за 1 день.
 
-- Простейшая система авторизации по нику
-- Тщательная система валидации
-- Установил перевод дефолтных сообщений на русский
-- Поставил московский временной поясом
-- Полностью реализовал CRUD статей
-- Статьями может манипулировать только создатель
-- Дополнил стилизацию, разбил шаблон на компоненты
+Такая поспешность так же является объяснением почему это проект далёк от моих лучших абразцов. Поэтому, попрошу вас не судить слишком строго :)
+
+# Что мне было необходимо разработать?
+В целом, задание простое - закодить функциональность добавления пользователя в БД, путём получения данных из формы HTML. Но я решил пойти немного дальше.
+- Добавил валидацию полей.
+- Добавил возможность пользователю манипулировать статьями (полная CRUD функциональность)
+- Добавил свою стилизацию (в дополнение той, что была предоставлена)
+- Добавил простейшую авторизацию пользователей по никнейму.
+- Добавил абстракцию в request классы.
+
+# Итог
+All in all, it's an **express-micro project** which I love. Thank you for your attention.
+В конце-концов, это микро-экспресс проект, который мне нравится. Благодарю за ваше внимание.
